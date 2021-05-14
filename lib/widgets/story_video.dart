@@ -137,7 +137,7 @@ class StoryVideoState extends State<StoryVideo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Colors.black,
       height: double.infinity,
       width: double.infinity,
       child: getContentView(),

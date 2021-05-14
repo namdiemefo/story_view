@@ -4,6 +4,7 @@ import 'dart:ui';
 
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/material.dart';
+import 'package:story_view/widgets/color.dart';
 
 import '../controller/story_controller.dart';
 import '../utils.dart';
@@ -624,7 +625,7 @@ class StoryViewState extends State<StoryView> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: bPrimaryColor,
       child: Stack(
         children: <Widget>[
           _currentView,
