@@ -120,7 +120,7 @@ class StoryVideoState extends State<StoryVideo> {
               width: 70,
               height: 70,
               child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
                 strokeWidth: 3,
               ),
             ),
@@ -137,7 +137,7 @@ class StoryVideoState extends State<StoryVideo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Colors.black,
       height: double.infinity,
       width: double.infinity,
       child: getContentView(),
