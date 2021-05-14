@@ -625,7 +625,7 @@ class StoryViewState extends State<StoryView> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: bPrimaryColor,
+      color: Colors.white,
       child: Stack(
         children: <Widget>[
           _currentView,
@@ -818,7 +818,7 @@ class StoryProgressIndicator extends StatelessWidget {
         this.indicatorHeight,
       ),
       foregroundPainter: IndicatorOval(
-        Colors.white.withOpacity(0.8),
+        bPrimaryColor,
         this.value,
       ),
       painter: IndicatorOval(
