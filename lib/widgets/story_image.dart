@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+//import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 import '../utils.dart';
 import '../controller/story_controller.dart';
@@ -29,37 +29,37 @@ class ImageLoader {
       onComplete();
     }
 
-    final fileStream = DefaultCacheManager()
-        .getFileStream(this.url, headers: this.requestHeaders as Map<String, String>?);
-
-    fileStream.listen(
-      (fileResponse) {
-        if (!(fileResponse is FileInfo)) return;
-        // the reason for this is that, when the cache manager fetches
-        // the image again from network, the provided `onComplete` should
-        // not be called again
-        if (this.frames != null) {
-          return;
-        }
-
-        final imageBytes = fileResponse.file.readAsBytesSync();
-
-        this.state = LoadState.success;
-
-        PaintingBinding.instance!.instantiateImageCodec(imageBytes).then(
-            (codec) {
-          this.frames = codec;
-          onComplete();
-        }, onError: (error) {
-          this.state = LoadState.failure;
-          onComplete();
-        });
-      },
-      onError: (error) {
-        this.state = LoadState.failure;
-        onComplete();
-      },
-    );
+    // final fileStream = DefaultCacheManager()
+    //     .getFileStream(this.url, headers: this.requestHeaders as Map<String, String>?);
+    //
+    // fileStream.listen(
+    //   (fileResponse) {
+    //     if (!(fileResponse is FileInfo)) return;
+    //     // the reason for this is that, when the cache manager fetches
+    //     // the image again from network, the provided `onComplete` should
+    //     // not be called again
+    //     if (this.frames != null) {
+    //       return;
+    //     }
+    //
+    //     final imageBytes = fileResponse.file.readAsBytesSync();
+    //
+    //     this.state = LoadState.success;
+    //
+    //     PaintingBinding.instance!.instantiateImageCodec(imageBytes).then(
+    //         (codec) {
+    //       this.frames = codec;
+    //       onComplete();
+    //     }, onError: (error) {
+    //       this.state = LoadState.failure;
+    //       onComplete();
+    //     });
+    //   },
+    //   onError: (error) {
+    //     this.state = LoadState.failure;
+    //     onComplete();
+    //   },
+    // );
   }
 }
 
