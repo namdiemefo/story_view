@@ -7,6 +7,7 @@ import 'package:video_player/video_player.dart';
 
 import '../utils.dart';
 import '../controller/story_controller.dart';
+import 'color.dart';
 
 class VideoLoader {
   String url;
@@ -137,7 +138,7 @@ class StoryVideoState extends State<StoryVideo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: bBackgroundColor,
       height: double.infinity,
       width: double.infinity,
       child: getContentView(),
