@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+//import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:video_player/video_player.dart';
 
 import '../utils.dart';
@@ -26,18 +26,18 @@ class VideoLoader {
       onComplete();
     }
 
-    final fileStream = DefaultCacheManager()
-        .getFileStream(this.url, headers: this.requestHeaders as Map<String, String>?);
-
-    fileStream.listen((fileResponse) {
-      if (fileResponse is FileInfo) {
-        if (this.videoFile == null) {
-          this.state = LoadState.success;
-          this.videoFile = fileResponse.file;
-          onComplete();
-        }
-      }
-    });
+    // final fileStream = DefaultCacheManager()
+    //     .getFileStream(this.url, headers: this.requestHeaders as Map<String, String>?);
+    //
+    // fileStream.listen((fileResponse) {
+    //   if (fileResponse is FileInfo) {
+    //     if (this.videoFile == null) {
+    //       this.state = LoadState.success;
+    //       this.videoFile = fileResponse.file;
+    //       onComplete();
+    //     }
+    //   }
+    // });
   }
 }
 
